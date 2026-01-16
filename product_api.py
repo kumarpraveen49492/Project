@@ -13,8 +13,10 @@ products = [
    Product(id=3,name="vehicles", description="A motor bike",price=1988.9),
    Product(id=4,name="shooes", description="A puma shoes",price=288.9)
 ]
+@app.get("/")
+def root():
+    return {"message": "FastAPI is running successfully 🚀"}
 @app.get("/products")
-
 def get_all_products():
     return products
 @app.get("/products/{id}")
@@ -27,7 +29,6 @@ def product_get_all(id:int):
 def post_products(Product:Product):
     products.append(Product)
     return Product
-
 
 
 
